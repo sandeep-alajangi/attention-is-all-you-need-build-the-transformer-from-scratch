@@ -94,7 +94,7 @@ def build_position_index_column(max_len: int) -> torch.Tensor:
     positions = torch.arange(max_len, dtype=torch.float32)
     
     # 2. Reshape it from a 1D line (max_len,) into a 2D column (max_len, 1)
-    return positions.unsqueeze(1)
+    return positions.reshape(max_len, 1)
 
 # Step 10 - fill_even_indices_with_sin (not yet solved)
 # TODO: implement
